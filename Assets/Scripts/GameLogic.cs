@@ -18,7 +18,6 @@ public class GameLogic : MonoBehaviour
 
     void StartGame() {
         calcGuess();
-        max+=1;
     }
 
     public void guessHigher() {
@@ -33,7 +32,7 @@ public class GameLogic : MonoBehaviour
 
 
     void calcGuess() {
-        guess = Random.Range(min, max);
+        guess = Random.Range(min, max + 1);
         guessText.text = guess.ToString();
     }
 
