@@ -17,25 +17,23 @@ public class GameLogic : MonoBehaviour
     }
 
     void StartGame() {
-        int initialGuess = Random.Range(min, max);
-        guessText.text = initialGuess.ToString();
-        guess = initialGuess;
+        calcGuess();
         max+=1;
     }
 
     public void guessHigher() {
-        min = guess;
+        min = guess + 1;
         calcGuess();
     }
 
     public void guessLower() {
-        max = guess;
+        max = guess - 1;
         calcGuess();
     }
 
 
     void calcGuess() {
-        guess = (min + max) / 2;
+        guess = Random.Range(min, max);
         guessText.text = guess.ToString();
     }
 
